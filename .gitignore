@@ -1,0 +1,48 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build directories
+dist/
+build/
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Dependencies
+package-lock.json
+yarn.lock
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+.cache/
+
+# Frontend specific
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Backend specific
+.env
+config/db.js
