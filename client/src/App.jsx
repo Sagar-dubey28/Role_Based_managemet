@@ -36,7 +36,7 @@ export default function App() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     setCurrentUser(null);
-    window.location.href = "/login";
+    window.location.href = "/";
   };
 
   if (loading) {

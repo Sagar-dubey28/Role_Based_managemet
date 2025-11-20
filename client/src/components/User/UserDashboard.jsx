@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { taskAPI } from '../../lib/api';
-import { AlertCircle, Clock, CheckCircle, RefreshCw, Calendar as CalendarIcon } from 'lucide-react';
+import { AlertCircle, Clock, CheckCircle, RefreshCw, Calendar as CalendarIcon, LogOut } from 'lucide-react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
@@ -99,6 +99,12 @@ export default function UserDashboard() {
     return hasTask ? <div className="w-2 h-2 bg-indigo-600 rounded-full mx-auto"></div> : null;
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    navigate('/');
+  };
+
   const filteredTasks = filterStatus === 'all' 
     ? tasks 
     : tasks.filter(t => t.status === filterStatus);
@@ -172,6 +178,15 @@ export default function UserDashboard() {
             >
               <RefreshCw size={20} />
               Refresh
+            </motion.button>
+            <motion.button
+              onClick={handleLogout}
+              className="flex items-center gap-2 px-4 py-2 text-red-600 hover:bg-red-50 rounded-lg transition border border-red-200"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <LogOut size={20} />
+              <span className="font-medium">Logout</span>
             </motion.button>
           </div>
         </motion.div>

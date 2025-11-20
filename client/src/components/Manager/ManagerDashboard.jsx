@@ -139,6 +139,12 @@ export default function ManagerDashboard() {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    navigate('/');
+  };
+
   const stats = {
     total: tasks.length,
     pending: tasks.filter(t => t.status === 'todo').length,
@@ -245,6 +251,15 @@ export default function ManagerDashboard() {
             >
               <RefreshCw size={20} />
               Refresh
+            </motion.button>
+            <motion.button
+              onClick={handleLogout}
+              className="flex items-center gap-2 px-4 py-2 text-red-600 hover:bg-red-50 rounded-lg transition border border-red-200"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <LogOut size={20} />
+              <span className="font-medium">Logout</span>
             </motion.button>
           </motion.div>
         </motion.div>

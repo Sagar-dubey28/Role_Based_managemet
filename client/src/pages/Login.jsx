@@ -44,10 +44,10 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-600 to-purple-700 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-600 to-purple-700 flex items-center justify-center ">
       <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-12 h-12 bg-indigo-600 rounded-full mb-4">
+        <div className="text-center mb-2">
+          <div className="inline-flex items-center justify-center w-12 h-12 bg-indigo-600 rounded-full mb-2">
             <LogIn className="text-white" size={24} />
           </div>
           <h1 className="text-3xl font-bold text-gray-800">Welcome Back</h1>
@@ -55,7 +55,7 @@ function Login() {
         </div>
 
         {error && (
-          <div className="mb-6 p-3 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3">
+          <div className="mb-2 p-2 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3">
             <AlertCircle className="text-red-600" size={20} />
             <p className="text-red-700 text-sm">{error}</p>
           </div>
@@ -67,7 +67,7 @@ function Login() {
               Email Address
             </label>
             <div className="relative">
-              <Mail className="absolute left-3 top-3 text-gray-400" size={20} />
+              <Mail className="absolute left-3 top-2 text-gray-400" size={20} />
               <input
                 type="email"
                 name="email"
@@ -107,15 +107,15 @@ function Login() {
           </button>
         </form>
 
-        <p className="text-center text-gray-600 mt-6">
+        <p className="text-center text-gray-600 mt-2">
           Don't have an account?{" "}
           <Link to="/signup" className="text-indigo-600 font-semibold hover:underline">
             Sign up
           </Link>
         </p>
 
-        <div className="mt-6 pt-6 border-t border-gray-200">
-          <p className="text-xs text-gray-500 text-center mb-3">Demo Credentials:</p>
+        <div className="mt-1 pt-2 border-t border-gray-200">
+          <p className="text-xs text-gray-500 text-center mb-2">Demo Credentials:</p>
           <div className="space-y-2 text-xs text-gray-600">
             <p>
               <span className="font-semibold">Admin:</span> admin@org.com / admin123

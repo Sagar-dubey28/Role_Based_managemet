@@ -102,7 +102,6 @@ export default function AdminDashboard() {
       const response = await adminAPI.createManager(formData);
       
       setManagers(prev => [...prev, response.data.manager]);
-      setUsers(prev => [...prev, response.data.manager]); // Add to users list too
       setSuccess('Manager created successfully!');
       setShowAddManagerModal(false);
     } catch (err) {
@@ -177,7 +176,7 @@ export default function AdminDashboard() {
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
-    navigate('/login');
+    navigate('/');
   };
 
   // Get priority badge color
